@@ -1,0 +1,458 @@
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("OpenSans-Bold.ttf");
+}
+
+body {
+  display:flex;
+  justify-content: center;
+  font-family: "OpenSans-Bold"
+}
+.wrapper {
+   display:flex;
+   height:1000px;
+   width:960px;
+   flex-wrap:wrap;
+   flex-direction:column;
+   border: 1px dashed red;
+
+}
+/* стилизуем шапку  */
+
+.header {
+
+
+  padding-left: 27px;
+  height: 162px;
+  background-color: #00aeef;
+  color: #193945;
+
+}
+.header_title {
+
+  padding-top: 51px;
+  font-size: 35px;
+  line-height: 22px;
+}
+.header p {
+
+font-family:"Open Sans";
+margin-top:10px;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+
+}
+.open-menu {
+  left:10px;
+  top:10px;
+  position:absolute;
+  display:none;
+  width:40px;
+  height:30px;
+}
+.open-menu span {
+  display:block;
+  border-radius: 2px;
+  width:100%;
+  background-color:black;
+  height:5px;
+
+}
+/* стилизуем навигацию */
+.sidebar{
+  box-sizing: border-box;
+  width:35%;
+  height: 1000px;
+  border:2px solid blue;
+  order:-1;
+
+}
+.sidebar_menu  a {
+   display: block;
+   box-sizing: border-box;
+   padding-top:25px;
+   height: 75px;
+   padding-left:29px;
+   background-color: #1f2229;
+   font-size: 18px;
+   line-height: 24px;
+   color: #ffffff;
+
+}
+.sidebar_logo a{
+  font-weight: lighter;
+  font-size: 30px;
+  padding-top:64px;
+  height:162px;
+  font-family:"Open Sans";
+
+}
+.sidebar_logo a span {
+  display:inline-block;
+  background-color:white;
+  color:black;
+  margin-right:5px;
+  padding:5px;
+}
+.sidebar_menu a:visited {
+  background-color: #191c24;
+  color: #808592;
+}
+.sidebar_menu a:active{
+  background-color: #2a2d37;
+
+}
+.sidebar_menu a:hover {
+  background-color: #0f1015;
+}
+
+.sidebar.open {
+  display:none;
+}
+
+/* стилизуем основной блок*/
+   /*информация оплаты*/
+.payment {
+  flex-grow: 1;
+  box-sizing: border-box;
+  border:1px solid orange;
+  padding-left:27px;
+
+
+
+}
+.payment_info {
+
+font-family:"Open Sans";
+color: #535864;
+width:285px;
+margin-top:47px;
+font-size: 16px;
+font-weight: 500;
+line-height: 21px;
+}
+.payment_info span, .payment_info p{
+  display:inline-block;
+}
+.payment_info p {
+  margin-right:30px;
+  width:140px;
+}
+.payment_info p:first-child {
+  margin-bottom:10px;
+}
+.payment_info h2 {
+  margin-bottom: 23px;
+}
+/*банковская карта с заголовком*/
+.bank-card {
+  position: relative;
+  margin-top:35px;
+}
+.bank-card_container label {
+  font-size: 16px;
+font-weight: 400;
+line-height: 21px;
+color: #8494ab;
+}
+.bank-card_title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.bank-card_container_font {
+  z-index: 20;
+  position:relative;
+  margin-top:22px;
+  padding-left:15px;
+  justify-content: space-around;
+  min-height:240px;
+  border: 1px solid #e4e9ee;
+  display:flex;
+  flex-direction: column;
+
+  width: 350px;
+  height:260px;
+  background-color: #f7f8f8;
+  border-radius: 10px;
+
+
+
+}
+.bank-card_container_font_number {
+  width: 320px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.bank-card_container_font_number label {
+  margin-bottom:5px;
+  width:100%;
+}
+.bank-card_number {
+  box-sizing: border-box;
+  padding-left:10px;
+  height:42px;
+  width:65px;
+}
+.bank-card-container_font_validity {
+  display:flex;
+  width:200px;
+  flex-wrap:wrap;
+}
+.bank-card-container_font_validity label{
+  width:100%;
+  margin-bottom:5px;
+
+}
+.bank-card_day {
+  box-sizing: border-box;
+ position:relative;
+ padding:10px;
+  width:70px;
+  height:42px;
+  margin-right:10px;
+  color: #8494ab;
+  background-color: white;
+  border: 1px solid #e4e9ee;
+
+}
+
+.bank-card-day-container{
+  display:none;
+}
+.bank-card-month-container{
+  display:none;
+}
+.bank-card-day-container.open ,.bank-card-month-container.open{
+  position:absolute;
+  top:42px;
+  left:0px;
+  display:block;
+  width:100%;
+  overflow-y: scroll;
+  height:100px;
+  text-align:center;
+}
+.bank-card-day-container.open li, .bank-card-month-container.open li {
+  display:block;
+  box-sizing: border-box;
+  padding:5px;
+  height:30px;
+  background-color: white;
+  border-bottom: 0.5px solid #e4e9ee;
+  border-left: 0.5px solid #e4e9ee;
+}
+.bank-card_day::before{
+  content: url(arrow.png);
+  position:absolute;
+  left:45px;
+ top:12px;
+}
+.bank-card_month {
+ box-sizing: border-box;
+ padding:10px;
+  position:relative;
+  background-color:white;
+border: 1px solid #e4e9ee;
+  width:85px;
+  height:42px;
+    color: #8494ab;
+}
+.bank-card_month::before {
+  content: url(arrow.png);
+  position:absolute;
+  left:60px;
+  top:11px;
+}
+.bank-card_name {
+  width: 319px;
+  height: 42px;
+}
+
+.bank-card_container_back {
+  position:absolute;
+  z-index:10;
+  left:210px;
+  top:67px;
+  box-sizing: border-box;
+  padding-top:85px;
+  padding-left:180px;
+  min-height:240px;
+  width: 350px;
+  height:260px;
+  border: 1px solid #e4e9ee;
+  background-color: #f7f8f8;
+  border-radius: 10px;
+}
+.bank-card_container_back::before {
+  content: "";
+  position:absolute;
+  top:20px;
+  left:0px;
+  width: 100%;
+  height: 40px;
+  background-color: #e4e9ee;
+}
+.bank-card_container_back_cvv {
+width:138px;
+}
+.bank-card-cvv {
+  margin-top:5px;
+  width:100%;
+  height:37px;
+}
+.select-bank-card_day ,
+.select-bank-card_month {
+  display: none;
+}
+.bank-card-pay {
+  margin-top:30px;
+  margin-bottom:20px;
+  width:173px;
+  border-radius: 10px;
+  background-color: #95bf00;
+  height: 40px;
+  color:white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+}
+.footer{
+  padding-top:26px;
+  width:65%;
+  padding-left:27px;
+  box-sizing: border-box;
+  height: 263px;
+  color: #7f8591;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  font-family:"Open Sans";
+  background-color: #373c43;
+}
+.footer p{
+  margin-bottom:10px;
+}
+
+/* адаптивность под различные разрешения*/
+
+@media (max-width:960px) {
+  .header{
+    width:100%;
+  }
+  .wrapper {
+    flex-direction: row;
+    height:auto;}
+  .sidebar {
+    background-color: #1f2229;
+    width:auto;
+    height:auto;
+    order:0;
+  }
+  .sidebar_logo a  span {
+    padding:2px;
+  }
+  .sidebar_menu {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+  }
+  .sidebar_menu a{
+
+    width:240px;
+    height:50px;
+    font-size: 16px;
+    padding-top:13px;
+  }
+  .payment{
+    width:auto;
+  }
+  .footer{
+    width:auto;
+  }
+}
+@media (max-width:610px){
+  .bank-card_container_back {
+    padding-left:210px;
+    left:160px;
+  }
+  .bank-card_container_back_cvv {
+  width:130px;
+  }
+}
+@media (max-width:480px) {
+.wrapper {
+  overflow-x: hidden;
+  height: 1400px;
+  width:480px;
+  display:flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+}
+.header {
+  height:180px;
+}
+.header_title{
+  font-size: 26px;
+}
+
+.sidebar {
+  background-color: inherit;
+  flex-direction:column;
+  width:220px;
+  order:-1;
+  height:1400px;
+}
+.sidebar_menu {
+  display:block;
+}
+.sidebar_menu a {
+ width:220px;
+ height:65px;
+}
+.sidebar_logo a {
+   font-size: 24px;
+   padding-top:18px;
+}
+.sidebar.open{
+  display:none;
+}
+.payment {
+ padding-left: 10px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.bank-card_container_font{
+  box-sizing: border-box;
+  width:300px;
+  padding-left:10px;
+}
+.bank-card_container_font_number {
+  width:280px;
+}
+.bank-card_name {
+  width:280px;
+}
+.bank-card_container_back {
+    width:300px;
+    margin-top:20px;
+    position: static;
+    padding-left:150px;
+  }
+.bank-card_container_back::before{
+     width:300px;
+     top:365px;
+  }
+.open-menu {
+  display:flex;
+  flex-direction: column;
+justify-content: space-around;
+}
+.footer {
+  flex-grow: 1;
+}
+}
