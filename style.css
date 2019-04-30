@@ -14,7 +14,6 @@ body {
    width:960px;
    flex-wrap:wrap;
    flex-direction:column;
-   border: 1px dashed red;
 
 }
 /* стилизуем шапку  */
@@ -64,7 +63,7 @@ line-height: 20px;
   box-sizing: border-box;
   width:35%;
   height: 1000px;
-  border:2px solid blue;
+  
   order:-1;
 
 }
@@ -116,7 +115,6 @@ line-height: 20px;
 .payment {
   flex-grow: 1;
   box-sizing: border-box;
-  border:1px solid orange;
   padding-left:27px;
 
 
