@@ -62,21 +62,17 @@ function validate(e) {
 } else {alert("Пожалуйста заполните поля корректно")}};
 
 let buttonMenu=document.querySelector(".open-menu");
-let mobileSize=window.matchMedia('(max-width:480px)');
-
 let nav=document.querySelector(".sidebar");
-function openMenu(ms){
-  if(ms.matches) {
-     nav.classList.add('open');
-     buttonMenu.addEventListener('click',function(){
-       nav.classList.toggle('open');
-       if(nav.className=="sidebar") {
-         buttonMenu.style.left="230px"
-       } else {buttonMenu.style.left="10px" }
-     });
-} else {nav.classList.remove("open");};}
 
-  openMenu(mobileSize);
+     buttonMenu.addEventListener('click',function(){
+         if(nav.style.display=="none") {
+           nav.style.display="block";
+           buttonMenu.style.left="230px"
+         }
+        else {
+         nav.style.display="none";
+         buttonMenu.style.left="10px" }
+     });
 
 // готовим селект для выбора месяца
 let titleDay=document.querySelector('.bank-cad_day_title');

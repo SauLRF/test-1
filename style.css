@@ -43,27 +43,15 @@ line-height: 20px;
 
 }
 .open-menu {
-  left:10px;
-  top:10px;
-  position:absolute;
-  display:none;
-  width:40px;
-  height:30px;
-}
-.open-menu span {
   display:block;
-  border-radius: 2px;
-  width:100%;
-  background-color:black;
-  height:5px;
-
 }
+
 /* стилизуем навигацию */
 .sidebar{
   box-sizing: border-box;
   width:35%;
   height: 1000px;
-  
+
   order:-1;
 
 }
@@ -106,9 +94,6 @@ line-height: 20px;
   background-color: #0f1015;
 }
 
-.sidebar.open {
-  display:none;
-}
 
 /* стилизуем основной блок*/
    /*информация оплаты*/
@@ -395,7 +380,22 @@ width:138px;
 .header_title{
   font-size: 26px;
 }
+.open-menu {
+  left:10px;
+  top:10px;
+  position:absolute;
+  display:none;
+  width:40px;
+  height:30px;
+}
+.open-menu span {
+  display:block;
+  border-radius: 2px;
+  width:100%;
+  background-color:black;
+  height:5px;
 
+}
 .sidebar {
   background-color: inherit;
   flex-direction:column;
@@ -414,7 +414,7 @@ width:138px;
    font-size: 24px;
    padding-top:18px;
 }
-.sidebar.open{
+.sidebar{
   display:none;
 }
 .payment {
